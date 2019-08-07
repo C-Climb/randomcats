@@ -1,0 +1,13 @@
+<% include partials/header %>
+    <div class="wrapper">
+        <h1>HELLO FROM THE LANDING PAGE</h1>
+        <div class="image--container">
+            <% catImages.forEach((catImages) => { %>
+                <img src="<%=catImages.url%>" alt="<%=catImages.breed%>">
+                <p><a href="<%=catImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></p>
+             <% }); %>
+        </div>
+        <p><a href="#">Next!</a></p>
+    </div>
+<% include partials/headerEnd %>
+<% include partials/footer %>

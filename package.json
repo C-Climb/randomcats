@@ -1,0 +1,19 @@
+{
+  "name": "catapp",
+  "version": "1.0.0",
+  "description": "A website for random cat images",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "axios": "^0.19.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Climb",
+  "license": "ISC"
+}
