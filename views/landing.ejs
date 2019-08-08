@@ -2,12 +2,14 @@
     <div class="wrapper">
         <h1>HELLO FROM THE LANDING PAGE</h1>
         <div class="image--container">
-            <% catImages.forEach((catImages) => { %>
-                <img src="<%=catImages.url%>" alt="<%=catImages.breed%>">
-                <p><a href="<%=catImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></p>
-             <% }); %>
+            <% randCatImages.forEach((randCatImages) => { %>
+                <img src="<%=randCatImages.url%>" alt="<%=randCatImages.breed%>">
+                <p><a href="<%=randCatImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></p>
+                <p><a href="<%=descCatImages.url%>">Next!</a></p>
+                <p><a href="#">Previous!</a></p> <!--No idea how to do this yet-->
+            <% }); %>
+            <p><%=catFacts%></p>
         </div>
-        <p><a href="#">Next!</a></p>
     </div>
 <% include partials/headerEnd %>
 <% include partials/footer %>
