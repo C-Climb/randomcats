@@ -5,20 +5,7 @@ const { catAPI } = require('./../config.json');
 
 // Main route
 router.get('/', (req, res) => {
-    // const token = catAPI;
-    //         headers: [{
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json',
-    //             Authorization: 'Bearer ' + token
-    //         }]
-    axios.all([
-        axios.get("https://api.thecatapi.com/v1/images/search"),
-        axios.get("https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc"), //Will need to manually add headers to every request if i want to use the apis voting funcctionality!
-        axios.get("https://catfact.ninja/fact")
-    ])
-    .then(axios.spread((randCatImages, descCatImages, catFacts) =>{
-        res.render('landing',{randCatImages: randCatImages.data, descCatImages:descCatImages.data, catFacts:catFacts.data.fact});
-    })); 
+    res.render('landing');
 });
 
 router.get('/about', (req, res) => {

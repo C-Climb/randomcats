@@ -1,0 +1,19 @@
+<% include partials/header %>
+    <div class="wrapper">
+        <% include partials/nav %>
+        <h1>HELLO FROM THE CAT PAGE</h1>
+        <div class="image--container">
+            <% randCatImages.forEach((randCatImages) => { %>
+                <div class="image--container__inner"><img src="<%=randCatImages.url%>" alt="<%=randCatImages.breed%>"></div>
+                <div class="landing--flex__container">
+                    <div><a href="<%=randCatImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></div>
+                    <div><a data-key="32" href="<%=descCatImages.url%>">Next!</a></div>
+                </div>
+            <% }); %>
+            <div class="facts--container">
+                <div><h3>Cat Fact:</h3>
+                <div><p><%=catFacts%></%=catFacts%></p>
+            </div>
+        </div>
+    </div>
+<% include partials/headerEnd %>
