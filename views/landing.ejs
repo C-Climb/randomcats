@@ -1,15 +1,25 @@
 <% include partials/header %>
     <div class="wrapper">
+        <div class="nav--container">
+            <div><p><a href="/about">About</a></p></div>
+            <div class="nav--social__container">
+                <div><p>Github</p></div>
+                <div><p>Twitter</p></div>
+            </div>
+        </div>
         <h1>HELLO FROM THE LANDING PAGE</h1>
         <div class="image--container">
             <% randCatImages.forEach((randCatImages) => { %>
-                <img src="<%=randCatImages.url%>" alt="<%=randCatImages.breed%>">
-                <p><a href="<%=randCatImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></p>
-                <p><a href="<%=descCatImages.url%>">Next!</a></p>
-                <p><a href="#">Previous!</a></p> <!--No idea how to do this yet-->
+                <div class="image--container__inner"><img src="<%=randCatImages.url%>" alt="<%=randCatImages.breed%>"></div>
+                <div class="landing--flex__container">
+                    <div><a href="<%=randCatImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></div>
+                    <div><a data-key="32" href="<%=descCatImages.url%>">Next!</a></div>
+                </div>
             <% }); %>
-            <p><%=catFacts%></p>
+            <div class="facts--container">
+                <div><h3>Cat Fact:</h3>
+                <div><p><%=catFacts%></p></%=catFacts%>
+            </div>
         </div>
     </div>
 <% include partials/headerEnd %>
-<% include partials/footer %>

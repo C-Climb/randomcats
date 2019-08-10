@@ -17,12 +17,9 @@ router.get('/', (req, res) => {
         axios.get("https://catfact.ninja/fact")
     ])
     .then(axios.spread((randCatImages, descCatImages, catFacts) =>{
-        console.log(catFacts.data.fact);
         res.render('landing',{randCatImages: randCatImages.data, descCatImages:descCatImages.data, catFacts:catFacts.data.fact});
     })); 
 });
-// TODO
-// refresh page on next click so our 'previous' button can manipulate window history
 
 router.get('/about', (req, res) => {
     // TODO - display a random cat (or dog((maybe))) image as the background image, add an about me and link to a reputable animal and suicide charity.

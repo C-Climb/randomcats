@@ -1,5 +1,94 @@
 @import 'reset';
+$font_stack:(
+  "Title" : "Lexend Deca", 
+  "Body":"Nunito Sans", 
+  "Default" : "sans-serif"
+);
+$color_stack:(
+  // have not decided
+);
+
+body{
+  overflow-x: hidden;
+}
+
+p,a{
+  font-family: map-get($font_stack, $key:Body);
+}
+
+h1,h3{
+  font-family: map-get($font_stack, $key:Title );
+}
+
+.nav--container{
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  .nav--social__container{
+    display:flex;
+    flex-direction: row;
+  }
+  div{
+    padding: 10px;
+  }
+}
+
+.wrapper{
+  // needs media queries before colors are added
+} h1{
+  font-weight: 500;
+  padding: 50PX;
+  text-align: center;
+} 
+
+.image--container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .image--container__inner{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  } img{
+    max-width: 500px;
+    max-height: 450px;
+  }
+  .landing--flex__container{
+    padding:10px;
+    display: flex;
+    flex-direction: row;
+    div{
+      padding: 10px;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.facts--container{
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  max-width: 50vw;
+  max-height: 50vh;
+  h3{
+    margin-bottom: 5px;
+  }
+  p{
+    align-items: stretch;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
 
 .main--footer{
   color: red;
 }
+
+// MEDIA QUERIES
