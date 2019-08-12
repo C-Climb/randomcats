@@ -12,7 +12,7 @@ body{
   overflow-x: hidden;
 }
 
-p,a{
+p,a,ul,li{
   font-family: map-get($font_stack, $key:Body);
 }
 
@@ -35,12 +35,26 @@ h1,h3{
 }
 
 .wrapper{
-  // needs media queries before colors are added
+  height: 100vh;
 } h1{
   font-weight: 500;
   padding: 50PX;
   text-align: center;
 } 
+// LANDING ROUTE
+// MOVING GRADIENT IN THE BG
+.animal--flex__container{
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  .animal{
+    margin: 0 25px;
+  }
+}
+
+
+// ANIMALS ROUTES
 
 .image--container{
   display: flex;
