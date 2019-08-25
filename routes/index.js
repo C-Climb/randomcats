@@ -1,7 +1,5 @@
 const express    = require('express');
 const router     = express.Router();
-const axios      = require('axios');
-const { catAPI } = require('./../config.json');
 
 // Main route
 router.get('/', (req, res) => {
