@@ -3,25 +3,32 @@ const router     = express.Router();
 const axios      = require('axios');
 
 router.get('/cat', (req, res) => {
+    function errorHandler(err){
+        res.render('404',{err:err.message});
+    }
+
     axios.all([
-        axios.get("https://api.thecatapi.com/v1/images/search"),
-        axios.get("https://api.thecatapi.com/v1/images/search?limit=1&page=10&order=Desc"), //Will need to manually add headers to every request if i want to use the apis voting funcctionality!
-        axios.get("https://catfact.ninja/fact")
+        axios.get("https://api.thecatapi.com/v1/images/search").catch(errorHandler),
+        axios.get("https://api.thecatapi.com/v1/images/search?limit=1&page=10&order=Desc").catch(errorHandler),
+        axios.get("https://catfact.ninja/fact").catch(errorHandler)
     ])
-    .then(axios.spread((randCatImages, descCatImages, catFacts) =>{
-        res.render('cat',{randCatImages: randCatImages.data, descCatImages:descCatImages.data, catFacts:catFacts.data.fact});
+    .then(axios.spread((randCatImages, nextCatImages, catFacts) =>{
+        res.render('cat',{randCatImages: randCatImages.data, nextCatImages:nextCatImages.data, catFacts:catFacts.data.fact});
     })); 
 });
 
 router.get('/dog', (req, res) =>{
+    function errorHandler(err){
+        res.render('404',{err:err.message});
+    }
+
     axios.all([
-        axios.get("https://api.thedogapi.com/v1/images/search"),
-        axios.get("https://api.thedogapi.com/v1/images/search?limit=1&page=10&order=Desc"),
-        axios.get("https://dog-api.kinduff.com/api/facts")
+        axios.get("https://api.thedogapi.com/v1/images/search").catch(errorHandler),
+        axios.get("https://api.thedogapi.com/v1/images/search?limit=1&page=10&order=Desc").catch(errorHandler)
     ])
-    .then(axios.spread((randDogImages,nextDogImage,dogFacts) =>{
-        res.render('dog', {randDogImages:randDogImages.data,nextDogImage:nextDogImage.data,dogFacts:dogFacts.data.facts});
-    })); 
+    .then(axios.spread((randDogImages,nextDogImage) =>{
+        res.render('dog', {randDogImages:randDogImages.data, nextDogImage:nextDogImage.data});
+    }));
 });
 
 module.exports = router;

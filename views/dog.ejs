@@ -1,22 +1,23 @@
 <% include partials/header %>
-    <div class="wrapper">
-        <% include partials/nav %>
-        <h1>HELLO FROM THE DOG PAGE</h1>
+    <div class="container">
         <div class="image--container">
             <% randDogImages.forEach((randDogImages) => { %>
-                <div class="image--container__inner"><img src="<%=randDogImages.url%>" alt="<%=randDogImages.breed%>"></div>
-                <div class="landing--flex__container">
-                    <div><a href="<%=randDogImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></div>
-                    <div><button class="button--back">Back!</button></div>
-                    <div><a class="button--next" href="<%=nextDogImage.url%>">Next!</a></div>
+                <div class="image--container__inner">
+                    <img class="image--resize" src="<%=randDogImages.url%>" alt="<%=randDogImages.breed%>">
+                    <div class="image--source">
+                        <div><a href="<%=randDogImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></div>
+                    </div>
                 </div>
-             <% }); %>
-            <div class="facts--container">
-                <div><h3>Dog Fact:</h3></div>
-                <div><p><%=dogFacts%></p></div>
-            </div>
+                <div class="image--container__flex">
+                    <div><button class="button--back">Back</button></div>
+                    <div><a class="button--next" href="<%=nextDogImage.url%>">Next</a></div>
+                </div>
+            <% }); %>
+        </div>
+        <div class="facts--container">
+            <div><h3>Dog Fact:</h3></div>
+            <div><p>re add when the api actually fucking works</p></div>
         </div>
     </div>
-<% include partials/footer %>
 <script src="/js/snippets.js"></script>
 <% include partials/headerEnd %>
