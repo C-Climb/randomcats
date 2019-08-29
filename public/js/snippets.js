@@ -22,11 +22,13 @@ const marginCorrect = () =>{
     const imageResize = document.querySelector('.image--resize');
     if(window.screen.width <= 360){
         imageResize.setAttribute("style", "width: 320px;");
-        factsContainer.setAttribute("style", "margin:0; height:190px");
+        factsContainer.setAttribute("style", "margin:0; height:190px; width:100%;");
     }
     if(factsContainer.clientHeight > 200){
-        factsContainer.setAttribute("style", "height:195px");
+        factsContainer.setAttribute("style", "height:200px;");
     }
+    return;
 }
+
 marginCorrect();
 buttonLogic();

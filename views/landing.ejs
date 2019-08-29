@@ -1,10 +1,17 @@
 <% include partials/header %>
+<% include partials/nav %>
     <div class="container">
-        <% include partials/nav %>
         <h1>HELLO FROM THE LANDING PAGE</h1>
         <div class="animal--container__flex">
             <div class="animal"><p><a href="/animal/cat">CAT ROUTE</a></p></div>
             <div class="animal"><p><a href="/animal/dog">DOG ROUTE</a></p></div>
         </div>
     </div>
+<script>
+    const dropDown = document.querySelector('.nav--container__dropdown');
+    const dropDownContent = document.getElementById('nav--dropdown__content');
+    dropDown.addEventListener('click', () => {
+        dropDownContent.classList.toggle('nav--container__social--active');
+    });
+</script>
 <% include partials/headerEnd %>

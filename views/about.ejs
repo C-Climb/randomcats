@@ -1,5 +1,5 @@
 <% include partials/header %>
-    <% include partials/nav %>
+<% include partials/nav %>
     <div class="container">
         <h1>HELLO FROM THE ABOUT PAGE</h1>
         <p>
@@ -9,4 +9,11 @@
             round, sausage beef jowl prosciutto biltong shoulder kielbasa.
         </p>
     </div>
+<script>
+    const dropDown = document.querySelector('.nav--container__dropdown');
+    const dropDownContent = document.getElementById('nav--dropdown__content');
+    dropDown.addEventListener('click', () => {
+         dropDownContent.classList.toggle('nav--container__social--active');
+    });
+</script>
 <% include partials/headerEnd %>

@@ -41,9 +41,78 @@ $desktop_width: 1024px;
 }
 
 body{
-  height: 99vh;
+  @include desktop{
+    height: 100vh;
+  }
   font-family: map-get($font_stack, "font");
+  background-color: #2D2A34;
 }
+
+// NAVBAR
+.nav--container{
+  .nav--container__dropdown{
+    cursor: pointer;
+    color: map-get($color_stack, "darkwhite");
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  a{
+    text-decoration: none;
+    color: map-get($color_stack, "darkwhite");
+  }
+  position: relative;
+  background-color: map-get($color_stack, "darkblue");
+  @include iosmobile{
+    .nav--container__social{
+      display: none;
+    }
+    .nav--container__social--active{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      a{
+        text-decoration: none;
+        color: map-get($color_stack, "darkwhite");
+      }
+      div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@include desktop{
+  .nav--container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .nav--container__dropdown{
+      margin-right: auto;
+    }
+  }
+  .nav--container__social{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: baseline;
+    margin-right: 50px;
+    p{
+      padding: 0 5px;
+    }
+  }
+}
+
 
 .button--next{
   width: 150px;
@@ -83,57 +152,47 @@ button{
     color: purple;
   }
   @include desktop{
-       }
+       color: orange;}
  }
 
 .container{
   height: inherit;
   background-color: #2D2A34;
-  @include desktop{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .image--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .image--container__inner{
+    padding: 50px;
+    background-color: #FAFAFA;
+    height: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .image--container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .image--container__inner{
-      background-color: #FAFAFA;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 50px;
-      .image--source{
-        padding: 10px;
-      }
-      .image--resize{
-        padding: 25px 25px 0 25px;
-        height: 450px;
-        width: auto;
+    margin: 0 auto;
+    width: 100%;
+    .image--source {
+      padding: 10px;
+      a{
+        color: #46a0a3;
+        font-weight: 500;
       }
     }
-    .image--container__flex{
-      display: flex;
-      div{
-        padding: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: baseline;
-      }
+    .image--resize{
+      padding: 25px 25px 0 25px;
+      height: 450px;
+      width: auto;
     }
-    .facts--container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      margin: 10px;
-      padding: 20px;
-      max-width: 40%;
-    }
+  }
+  .image--container__flex{
+    background-color: #2D2A34;
   }
 }
 
@@ -142,34 +201,55 @@ button{
     height: 100vh;
   }
 }
-
 .image--resize{
   @include iosmobile{
     height: 240px;
     max-width: 350px;
+    margin-bottom: 50px;
   }
 }
 
 .image--container{
-  @include iosmobile{
+  @include tablet{
+    width: 100%;
+  }
+  @include desktop{
+    width: inherit;
+  }
+}
+
+.image--container__flex{
+  @include desktop{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    div{
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: baseline;
+    }
   }
 }
 
 .image--container__inner{
   @include iosmobile{
-    padding: 50px;
-    width: 100%;
-    background-color: #FAFAFA;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     .image--source{
       padding: 10px;
+    }
+  }
+  @include androidmobile{
+    margin: 0 auto;
+    .image--resize{
+      height: 250px;
+      width: auto;
+    }
+  }
+  @include tablet{
+    width: 100%;
+    padding: 50px;
+    .image--resize{
+      height: 300px;
+      width: auto;
     }
   }
 }
@@ -193,22 +273,23 @@ button{
       }
     }
   }
-}
-
-.facts--container{
-  @include iosmobile{
+  @include androidmobile{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    margin: 10px;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      margin: 0 5px;
+    }
+    button{
+      height: 40px;
+    }
   }
-}
-
-.image--source a{
-  color: #46a0a3;
-  font-weight: 500;
 }
 
 .facts--container{
@@ -221,9 +302,26 @@ button{
     font-size: 1.25em;
     margin-bottom: 10px;
   }
-}
-
-.image--resize{
-  max-height: 450px;
-  width: auto;
+  @include androidmobile{
+    padding: 10px;
+    width: 100%;;
+  }
+  @include iosmobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 10px;
+    width: inherit;
+  }
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 20px;
+    max-width: 40%;
+  }
 }

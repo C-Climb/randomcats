@@ -1,4 +1,5 @@
 <% include partials/header %>
+<% include partials/nav %>
     <div class="container">
         <div class="image--container">
             <% randDogImages.forEach((randDogImages) => { %>
@@ -16,8 +17,15 @@
         </div>
         <div class="facts--container">
             <div><h3>Dog Fact:</h3></div>
-            <div><p>re add when the api actually fucking works</p></div>
+            <div><p>Coming soon!</p></div>
         </div>
     </div>
+<script>
+    const dropDown = document.querySelector('.nav--container__dropdown');
+    const dropDownContent = document.getElementById('nav--dropdown__content');
+    dropDown.addEventListener('click', () => {
+        dropDownContent.classList.toggle('nav--container__social--active');
+    });
+</script>
 <script src="/js/snippets.js"></script>
 <% include partials/headerEnd %>
