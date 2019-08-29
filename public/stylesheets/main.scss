@@ -40,88 +40,51 @@ $desktop_width: 1024px;
   }
 }
 
-body{
-  @include desktop{
-    height: 100vh;
-  }
-  font-family: map-get($font_stack, "font");
-  background-color: #2D2A34;
-}
-
 // NAVBAR
 .nav--container{
   .nav--container__dropdown{
     cursor: pointer;
     color: map-get($color_stack, "darkwhite");
+    display: flex;
     font-weight: bold;
+    justify-content: flex-end;
     letter-spacing: 1px;
     padding: 10px;
-    display: flex;
-    justify-content: flex-end;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+  }
+  .nav--container__dropdown:hover{
+    background-color: map-get($color_stack , "lightblue");
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+  }
+  .nav--container__social div{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+    padding: 10px;
+  }
+  .nav--container__social div:hover{
+    background-color: map-get($color_stack , "lightblue");
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
   }
   a{
-    text-decoration: none;
     color: map-get($color_stack, "darkwhite");
+    text-decoration: none;
   }
-  position: relative;
   background-color: map-get($color_stack, "darkblue");
-  @include iosmobile{
-    .nav--container__social{
-      display: none;
-    }
-    .nav--container__social--active{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      a{
-        text-decoration: none;
-        color: map-get($color_stack, "darkwhite");
-      }
-      div{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 10px;
-      }
-    }
-  }
+  position: relative;
 }
 
-@include desktop{
-  .nav--container{
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    .nav--container__dropdown{
-      margin-right: auto;
-    }
-  }
-  .nav--container__social{
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    align-items: baseline;
-    margin-right: 50px;
-    p{
-      padding: 0 5px;
-    }
-  }
+body{
+  font-family: map-get($font_stack, "font");
+  background-color: #2D2A34;
 }
-
 
 .button--next{
-  width: 150px;
+  background-color: map-get($color_stack, "darkblue");
+  color:map-get($color_stack, "darkwhite");
   padding: 10px 0 10px 0;
   text-align: center;
-  color:map-get($color_stack, "darkwhite");
   text-decoration: none;
-  background-color: map-get($color_stack, "darkblue");
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+  width: 150px;
 }
 
 .button--next:hover,button:hover{
@@ -130,54 +93,40 @@ body{
 }
 
 button{
-  width: 150px;
-  padding: 10px 0 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
+  background-color: map-get($color_stack, "darkblue");
   border: 0;
   color:map-get($color_stack, "darkwhite");
-  background-color: map-get($color_stack, "darkblue");
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 0 10px 0;
+  text-decoration: none;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+  width: 150px;
 }
 
- p{
-   @include androidmobile{
-     color: red;
-  }
-  @include iosmobile{
-    color: green;
-  }
-   @include tablet{
-    color: purple;
-  }
-  @include desktop{
-       color: orange;}
- }
-
+// ANIMAL STYLES
 .container{
-  height: inherit;
+  align-items: center;
   background-color: #2D2A34;
   display: flex;
   flex-direction: column;
+  height: inherit;
   justify-content: center;
-  align-items: center;
   .image--container{
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   .image--container__inner{
-    padding: 50px;
+    align-items: center;
     background-color: #FAFAFA;
-    height: inherit;
     display: flex;
     flex-direction: column;
+    height: inherit;
     justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
+    margin-bottom: 30px;
+    padding: 50px;
     .image--source {
       padding: 10px;
       a{
@@ -186,8 +135,8 @@ button{
       }
     }
     .image--resize{
-      padding: 25px 25px 0 25px;
       height: 450px;
+      padding: 25px 25px 0 25px;
       width: auto;
     }
   }
@@ -196,55 +145,134 @@ button{
   }
 }
 
-.container{
-  @include iosmobile{
-    height: 100vh;
-  }
-}
-.image--resize{
-  @include iosmobile{
-    height: 240px;
-    max-width: 350px;
-    margin-bottom: 50px;
-  }
-}
-
-.image--container{
-  @include tablet{
-    width: 100%;
-  }
-  @include desktop{
-    width: inherit;
+.facts--container{
+  background-color: map-get($color_stack, "lightgreen");
+  border-left: 5px  map-get($color_stack, "darkgreen") solid; 
+  color: #46a0a3;
+  h3{
+    color: map-get($color_stack, "darkgreen");
+    font-size: 1.25em;
+    margin-bottom: 10px;
   }
 }
 
-.image--container__flex{
-  @include desktop{
-    display: flex;
+
+
+// MEDIA QUERIES
+
+@include iosmobile{
+  // ------------------------------
+  .image--resize{
+      height: 240px;
+      max-width: 350px;
+      margin-bottom: 50px;
+  }
+  // ------------------------------
+  .image--container__flex{
     div{
-      padding: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: baseline;
+      padding: 5px 0;
     }
   }
+  // ------------------------------
+  .facts--container{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    width: 80%;
+  }
 }
 
-.image--container__inner{
-  @include iosmobile{
-    margin: 0 auto;
+@include androidmobile{
+  .nav--container__social{
+    display: none;
+  }
+  .nav--container__social--active{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a{
+      text-decoration: none;
+      color: map-get($color_stack, "darkwhite");
+    }
+    div{
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+  .container{
+    height: 100vh;
+  }
+  // --------------------------------------
+  .image--container__inner{
+      margin: 0 auto;
+      width: 100vw;
     .image--source{
       padding: 10px;
     }
-  }
-  @include androidmobile{
-    margin: 0 auto;
     .image--resize{
       height: 250px;
       width: auto;
     }
   }
-  @include tablet{
+  // ---------------------
+  .image--container__flex{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    div{
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      margin: 0 5px;
+    }
+    button{
+      height: 40px;
+    }
+  }
+  // ---------------------
+  .facts--container{
+    padding: 10px;
+  }
+}
+
+@include tablet{
+  .nav--container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    .nav--container__dropdown{
+      margin-right: auto;
+    }
+  }
+  .nav--container__social{
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    margin-right: 50px;
+    p{
+      padding: 0 5px;
+    }
+  }
+  // -------------------
+  .image--container{
+    width: 100%;
+  }
+  // -------------------
+  .image--container__inner{
     width: 100%;
     padding: 50px;
     .image--resize{
@@ -252,76 +280,26 @@ button{
       width: auto;
     }
   }
-}
-
-.image--container__flex{
-  @include iosmobile(){
+  // --------------------
+  .image--container__flex{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
     div{
-      height: 50px;
-      padding: 5px 0;
-      margin: 0 5px;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      button{
-        height: 40px;
-      }
-    }
-  }
-  @include androidmobile{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    div{
       display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      margin: 0 5px;
-    }
-    button{
-      height: 40px;
+      justify-content: baseline;
+      padding: 14px;
     }
   }
-}
-
-.facts--container{
-  background-color: map-get($color_stack, "lightgreen");
-  border-left: 5px  map-get($color_stack, "darkgreen") solid; 
-  color: #46a0a3;
-
-  h3{
-    color: map-get($color_stack, "darkgreen");
-    font-size: 1.25em;
-    margin-bottom: 10px;
-  }
-  @include androidmobile{
-    padding: 10px;
-    width: 100%;;
-  }
-  @include iosmobile{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+  // ----------------------
+  .facts--container{
     margin: 10px;
-    width: inherit;
-  }
-  @include desktop{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 10px;
-    padding: 20px;
     max-width: 40%;
+    padding: 20px;
+  }
+}
+
+@include desktop{
+  .image--container{
+    width: inherit;
   }
 }
