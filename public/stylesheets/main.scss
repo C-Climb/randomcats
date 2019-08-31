@@ -125,7 +125,6 @@ button{
     flex-direction: column;
     height: inherit;
     justify-content: center;
-    margin-bottom: 30px;
     padding: 50px;
     .image--source {
       padding: 10px;
@@ -135,7 +134,6 @@ button{
       }
     }
     .image--resize{
-      height: 450px;
       padding: 25px 25px 0 25px;
       width: auto;
     }
@@ -149,6 +147,7 @@ button{
   background-color: map-get($color_stack, "lightgreen");
   border-left: 5px  map-get($color_stack, "darkgreen") solid; 
   color: #46a0a3;
+  width: 100%;
   h3{
     color: map-get($color_stack, "darkgreen");
     font-size: 1.25em;
