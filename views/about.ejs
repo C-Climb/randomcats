@@ -1,19 +1,11 @@
 <% include partials/header %>
 <% include partials/nav %>
     <div class="container">
-        <h1>HELLO FROM THE ABOUT PAGE</h1>
-        <p>
-            Bacon ipsum dolor amet prosciutto cupim fatback pig pancetta tenderloin pork belly filet mignon short loin ham
-            ribeye swine. Pork chop leberkas andouille bresaola shoulder biltong turkey. Jerky ground round buffalo boudin,
-            tongue porchetta pork belly filet mignon ball tip shoulder strip steak. Short loin ribeye brisket doner ground
-            round, sausage beef jowl prosciutto biltong shoulder kielbasa.
-        </p>
+        <div class="container--inner__about">
+                <h1>Yeah, but why?</h1>
+                <p>
+                    I was having a rough go of things and wanted to practice consuming APIs. I thought of various things that make me happy and immediately came to animals, which birthed this project! Hopefully, if you stumble upon this site and you're having bad thoughts, it helps you. If not, I implore you to reach out to <span class="about--cta"> <a href="http://ibpf.org/resource/list-international-suicide-hotlines" target="_blank" rel="noopener noreferrer">a suicide prevention lifeline.</a></span> I promise there are people in your life who care about you, even if you think there aren't, who would be very sad about you not being with them to experience the tumulous journey that is life.
+                </p>
+        </div>
     </div>
-<script>
-    const dropDown = document.querySelector('.nav--container__dropdown');
-    const dropDownContent = document.getElementById('nav--dropdown__content');
-    dropDown.addEventListener('click', () => {
-         dropDownContent.classList.toggle('nav--container__social--active');
-    });
-</script>
 <% include partials/headerEnd %>

@@ -4,7 +4,7 @@
         <div class="image--container">
             <% randCatImages.forEach((randCatImages) => { %>
                 <div class="image--container__inner">
-                    <img class="image--resize" src="<%=randCatImages.url%>" alt="<%=randCatImages.breed%>"> 
+                    <img class="image--resize" src="<%=randCatImages.url%>" alt="A cute cat!"> 
                 <div class="image--source">
                     <div><a href="<%=randCatImages.url%>" target="_blank" rel="noopener noreferrer">Source</a></div>
                 </div>
@@ -20,12 +20,4 @@
             <div><p><%=catFacts%></p></div>
         </div>
     </div>
-<script>
-    const dropDown = document.querySelector('.nav--container__dropdown');
-    const dropDownContent = document.getElementById('nav--dropdown__content');
-    dropDown.addEventListener('click', () => {
-        dropDownContent.classList.toggle('nav--container__social--active');
-    });
-</script>
-<script src="/js/snippets.js"></script>
 <% include partials/headerEnd %>

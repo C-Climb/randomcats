@@ -1,2 +1,11 @@
+<script>
+    const dropDown = document.querySelector('.nav--container__dropdown');
+    const dropDownContent = document.getElementById('nav--dropdown__content');
+    dropDown.addEventListener('click', () => {
+        if(screen.width <= 767){
+            dropDownContent.classList.toggle('nav--container__social--active');
+        }
+    });
+</script>
 </body>
 </html>

@@ -1,15 +1,10 @@
 <% include partials/header %>
 <% include partials/nav %>
 <div class="container">
-    <h1>:(</h1>
-    <h3>Something went wrong:</h3>
-    <p><%=err%></p>
+    <div class="container--inner__about">
+        <h1>:(</h1>
+        <h3>Something went wrong:</h3>
+        <p><%=err%></p>
+    </div>
 </div>
-<script>
-        const dropDown = document.querySelector('.nav--container__dropdown');
-        const dropDownContent = document.getElementById('nav--dropdown__content');
-        dropDown.addEventListener('click', () => {
-        dropDownContent.classList.toggle('nav--container__social--active');
-    });
-</script>
 <% include partials/headerEnd %>

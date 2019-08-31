@@ -1,17 +1,15 @@
 <% include partials/header %>
 <% include partials/nav %>
     <div class="container">
-        <h1>HELLO FROM THE LANDING PAGE</h1>
-        <div class="animal--container__flex">
-            <div class="animal"><p><a href="/animal/cat">CAT ROUTE</a></p></div>
-            <div class="animal"><p><a href="/animal/dog">DOG ROUTE</a></p></div>
+        <div class="container--inner">
+            <div class="container--inner__CTA">
+                <h1>It's time to cheer up :)</h1>
+                <p>Don't worry about anything right now and look at cute animals instead!</p>
+            </div>
+            <div class="animal--container__flex">
+                <div class="animal"><p><a href="/animal/cat"><span>&#x1F436;</span>I want to look at Cats!</a></p></div>
+                <div class="animal"><p><a href="/animal/dog"><span>&#x1F431;</span>I want to look at Dogs!</a></p></div>
+            </div>
         </div>
     </div>
-<script>
-    const dropDown = document.querySelector('.nav--container__dropdown');
-    const dropDownContent = document.getElementById('nav--dropdown__content');
-    dropDown.addEventListener('click', () => {
-        dropDownContent.classList.toggle('nav--container__social--active');
-    });
-</script>
 <% include partials/headerEnd %>

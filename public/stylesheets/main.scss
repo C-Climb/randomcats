@@ -11,7 +11,7 @@ $color_stack:(
   "darkblue": #5F72B3
 );
 
-$android-mobile_width:320px;
+$android-mobile_width:150px;
 $ios-mobile_width: 480px;
 $tablet_width: 768px;
 $desktop_width: 1024px;
@@ -210,6 +210,88 @@ button{
   .container{
     height: 100vh;
   }
+  .container--inner{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .container--inner__CTA{
+      align-items: center;
+      color: map-get($color_stack, "darkwhite");
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 80%;
+      h1{
+        margin-bottom: 10px;
+      }
+      p{
+        line-height: 20px;
+        margin-bottom: 25px;
+      }
+    }
+    .animal--container__flex{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 250px;
+      width: 250px;
+    }
+    .animal{
+      align-items: center;
+      background-color: map-get($color_stack, "darkblue");
+      border-radius: 2.5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      height: 250px;
+      margin: 10px;
+      padding: 10px;
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+      width: 250px;
+      span{
+        display: block;
+        font-size: 50px;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      a{
+        color: map-get($color_stack, "darkwhite");
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .animal:hover{
+      background-color: map-get($color_stack, "lightblue");
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1) 800ms;
+    }
+  }
+  // -------------------------------------
+  .container--inner__about{
+    align-items: flex-start;
+    background-color: map-get($color_stack, "darkblue");
+    color: map-get($color_stack, "darkwhite");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+    width: 80%;
+    margin-bottom:50px;
+    h1{
+      margin-bottom: 10px;
+    }
+    p{
+      line-height: 25px;
+    }
+    .about--cta a{
+      background-color: rgba(0, 0, 0, 0.219);
+      color: map-get($color_stack, "darkgreen");
+    }
+  }
   // --------------------------------------
   .image--container__inner{
       margin: 0 auto;
@@ -255,6 +337,12 @@ button{
     padding: 10px;
     .nav--container__dropdown{
       margin-right: auto;
+      transition: none;
+    }
+    .nav--container__dropdown:hover{
+      cursor: default;
+      background-color: inherit;
+      transition: none;
     }
   }
   .nav--container__social{
@@ -265,6 +353,28 @@ button{
     margin-right: 50px;
     p{
       padding: 0 5px;
+    }
+  }
+  // ----------------------------------------------
+  .container--inner{
+    .container--inner__CTA{
+      align-items: flex-start;
+      h1{
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      p{
+        font-size: 1.25em;
+        line-height: 1.25em;
+        margin-bottom: 25px;
+        text-align: left;
+      }
+    }
+    .animal--container__flex{
+      flex-direction: row;
+      height: 250px;
+      width: auto;
     }
   }
   // -------------------

@@ -17,14 +17,3 @@ app.use('/animal', animalRoutes);
 app.listen(port, () => {
     console.log(`now listening on ${port}`);
 });
-
-// TODO
-// ERROR HANDLING || DYNAMIC IMAGE RESIZING || DYNAMIC HTML RENDERING || ACTUAL STYLING || BEM REFACTOR PASS
-
-// --------- DYNAMIC HTML RENDERING LOGIC
-// IF THE PAGE WE ARE ON IS TRUE, HIDE IN NAV
-
-// ========= ERROR HANDING LOGIC
-// view the actual express docs!
-
-// ADD URL PARAMETER WITH SHORT ID
