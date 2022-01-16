@@ -10,7 +10,7 @@
     "shortid": "^2.2.14"
   },
   "devDependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "eslint": "^6.2.2"
   },
   "scripts": {
